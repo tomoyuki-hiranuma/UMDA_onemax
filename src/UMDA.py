@@ -24,13 +24,13 @@ class Umda:
 
 if __name__ == '__main__':
   TAU = 0.5
-  POPULATION_SIZE = 6
-  INDIVIDUAL_SIZE = 5
+  POPULATION_SIZE = 100
+  INDIVIDUAL_SIZE = 50
 
   umda = Umda(TAU, POPULATION_SIZE, INDIVIDUAL_SIZE)
   print("第{}世代".format(0))
   umda.population.print_population()
-  for i in range(10):
+  for i in range(50):
     print("第{}世代".format(i+1))
     umda.do_one_generation()
     umda.population.print_population()
