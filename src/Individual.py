@@ -6,6 +6,10 @@ class Individual:
     self.fitness = sum([int(i) for i in self.gene])
     self.individual_size = individual_size
 
+  def clone(self, gene):
+    self.gene = gene
+    self.evaluation()
+
   def evaluation(self):
     self.fitness = sum([int(i) for i in self.gene])
 

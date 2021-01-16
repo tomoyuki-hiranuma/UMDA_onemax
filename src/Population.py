@@ -17,12 +17,29 @@ class Population:
   def get_gene_array(self, n):
     return np.array([[int(i) for i in self.array[j].gene] for j in range(n)])
 
+  def make_next_populaton(self, array):
+    next_population = []
+    for i in range(self.population_size):
+      gene_array = []
+      for j in range(self.individual_size):
+        rand = np.random.random()
+        gene_array.append('1' if rand<array[j] else '0')
+      new_individual = Individual(self.individual_size)
+      new_individual.clone(''.join(gene_array))
+      next_population.append(new_individual)
+    self.array = np.array(next_population)
+    return self
+
+
 if __name__ == '__main__':
   population_size = 6
   individual_size = 5
 
   population = Population(population_size, individual_size)
   population.sort_by_fitness()
-  print(np.mean(population.get_gene_array(3), axis=1))
-  population.print_population()
+  prob = np.mean(population.get_gene_array(3), axis=0)
+  print(prob)
+  # population.print_population()
+  population.make_next_populaton(prob)
+  # population.print_population()
 
