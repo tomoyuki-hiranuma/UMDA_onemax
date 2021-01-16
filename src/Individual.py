@@ -9,6 +9,9 @@ class Individual:
   def evaluation(self):
     self.fitness = sum([int(i) for i in self.gene])
 
+  def print_individual(self):
+    print("gene: {}, fitness: {}".format(self.gene, self.fitness))
+
 
 if __name__ == '__main__':
   ind_length = 5
