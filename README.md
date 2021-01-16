@@ -10,5 +10,5 @@ UMDAの基本的なアルゴリズムを通して分布推定アルゴリズム�
 
 ## 追試論文
 Swarm and Evolutionary Computation(2011)のサーベイ論文の一節  
-元論文
+元論文  
 [UMDA](http://www.muehlenbein.org/estbin96.pdf)
